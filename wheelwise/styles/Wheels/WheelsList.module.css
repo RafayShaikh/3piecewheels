@@ -1,0 +1,46 @@
+.wheelsListContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.topSection {
+  margin-top: 8rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.midSection {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80vw;
+  max-width: 90vw;
+  min-width: 60vw;
+}
+.bottomSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.button {
+  border: none;
+  background-color: darkred;
+  color: white;
+  font-weight: 700;
+  font-size: larger;
+  height: 50px;
+  width: 150px;
+  border-radius: 10px;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+}
+.button:hover {
+  box-shadow: 0px 0px 5px 1px black;
+  background-color: red;
+  cursor: pointer;
+  border-radius: 100px;
+}

@@ -1,0 +1,43 @@
+.navigation_container {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  padding-right: 5px;
+  margin-right: 5px;
+  justify-content: center;
+  transition: all 0.5s;
+  overflow-y: hidden;
+  animation: loading 1.5s linear forwards;
+}
+.navigation_list {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  height: 90%;
+  flex-wrap: nowrap;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-y: hidden;
+}
+.navigation_list:active {
+  color: darkred;
+}
+.link {
+  align-items: center;
+  flex-wrap: nowrap;
+  cursor: pointer;
+  padding: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  transition: all 0.3s;
+}
+.link:hover {
+  border-radius: 5px;
+  background-color: darkred;
+}
+@media screen and (max-width: 708px) {
+  .navigation_list > h4:hover {
+  }
+}

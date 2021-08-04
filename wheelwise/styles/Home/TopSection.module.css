@@ -1,0 +1,83 @@
+.topSection {
+  margin-top: 8rem;
+  height: 70vh;
+}
+
+.subHead {
+  display: flex;
+  justify-content: flex-end;
+}
+.image {
+  width: 100vw;
+  position: absolute;
+  opacity: 0;
+  animation: slideLeft 0.5s 0.3s ease-in-out forwards;
+}
+.text {
+  backdrop-filter: blur(4px);
+  background-color: rgba(0, 0, 0, 0.473);
+  color: white;
+  position: relative;
+  z-index: 10;
+  right: 1;
+  max-width: 600px;
+  padding: 18px;
+  align-items: stretch;
+  border-radius: 10px;
+  opacity: 0;
+
+  animation: slideRight 0.5s 0.3s ease-in-out forwards;
+}
+.text > p {
+  font-size: large;
+}
+.text > h1 {
+  font-size: xx-large;
+}
+.button {
+  border: none;
+  background-color: darkred;
+  color: white;
+  font-weight: 700;
+  font-size: larger;
+  height: 50px;
+  width: 150px;
+  border-radius: 10px;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button:hover {
+  box-shadow: 0px 0px 5px 1px white;
+  background-color: red;
+  cursor: pointer;
+  border-radius: 100px;
+}
+
+.arrow {
+  height: 25px;
+  width: 25px;
+}
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+
+    transform: translateX(0%);
+  }
+}
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+
+    transform: translateX(0%);
+  }
+}

@@ -1,0 +1,94 @@
+.wheelsContainer {
+}
+.image {
+  width: 100vw;
+  position: absolute;
+  opacity: 0;
+  animation: slideRight 0.5s 0.3s ease-in-out forwards;
+}
+.formContainer {
+  position: relative;
+  height: 100%;
+  width: 550px;
+  max-width: 600px;
+  min-width: 300px;
+  padding: 20px;
+  margin-left: 4%;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.747);
+  color: white;
+  backdrop-filter: blur(4px);
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 1px red;
+  opacity: 0;
+  animation: slideLeft 0.5s 0.3s ease-in-out forwards;
+}
+.formContainer > h4 {
+  font-weight: 200;
+  font-size: larger;
+}
+.formContainer > select {
+  width: 280px;
+  max-width: 280px;
+  min-width: 200px;
+  height: 40px;
+  max-height: 40px;
+  min-height: 35px;
+  border-radius: 10px;
+  padding: 5px;
+  font-weight: bolder;
+}
+.formContainer > select > option {
+  font-weight: bold;
+}
+.formContainer > select > option:focus {
+  border-color: darkred;
+}
+.button {
+  border: none;
+  background-color: darkred;
+  color: white;
+  font-weight: 700;
+  font-size: larger;
+  height: 50px;
+  width: 150px;
+  border-radius: 10px;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+.button:hover {
+  box-shadow: 0px 0px 5px 1px white;
+  background-color: darkred;
+  cursor: pointer;
+  border-radius: 100px;
+}
+.search {
+  height: 25px;
+  width: 25px;
+}
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+
+    transform: translateX(0%);
+  }
+}
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+
+    transform: translateX(0%);
+  }
+}

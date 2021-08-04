@@ -1,0 +1,41 @@
+.App {
+  color: gray;
+  height: 100%;
+  width: 100%;
+}
+
+.Body {
+  padding-top: 25vh;
+}
+
+@keyframes loading {
+  from {
+    opacity: 0;
+    transform: rotateY(100deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+}
+@keyframes loading2 {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes loading3 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media screen and (max-width: 708px) {
+}
