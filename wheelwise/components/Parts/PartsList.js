@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import styles from '../../styles/Parts/PartsList.module.css';
 import Part from './Part';
 
@@ -15,6 +16,10 @@ function PartsList() {
     { id: 10, name: 'Hello', thumbnail: '/logoTemp.png' },
     { id: 11, name: 'Hello', thumbnail: '/logoTemp.png' },
   ];
+  const router = useRouter();
+  const handleRoute = (params) => {
+    router.push('/faq');
+  };
 
   return (
     <div className={styles.partsListContainer}>
@@ -29,7 +34,9 @@ function PartsList() {
       </div>
       <div className={styles.bottomSection}>
         <h3>Feel Free to contact us for more information</h3>
-        <button className={styles.button}>Contact Us</button>
+        <button onClick={handleRoute} className={styles.button}>
+          Contact Us
+        </button>
       </div>
     </div>
   );

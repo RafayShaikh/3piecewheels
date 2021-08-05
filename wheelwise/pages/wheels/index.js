@@ -1,9 +1,9 @@
 import Head from 'next/head';
-import Header from '../components/HeaderFooter/Header';
-import WheelsList from '../components/Wheels/WheelsList';
-import WheelsSelection from '../components/Wheels/WheelsSelection';
-import styles from '../styles/Wheels/Wheels.module.css';
-import Footer from '../components/HeaderFooter/Footer';
+import Header from '../../components/HeaderFooter/Header';
+import WheelsList from '../../components/Wheels/WheelsList';
+import WheelsSelection from '../../components/Wheels/WheelsSelection';
+import styles from '../../styles/Wheels/Wheels.module.css';
+import Footer from '../../components/HeaderFooter/Footer';
 
 function wheels() {
   return (

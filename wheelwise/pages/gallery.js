@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Footer from '../components/HeaderFooter/Footer';
 import Header from '../components/HeaderFooter/Header';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 
 function gallery() {
   const [items, setItems] = useState([
@@ -88,7 +89,10 @@ function gallery() {
         'some text  Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui voluptatem tempore consequuntur soluta ab neque eaque consequatur fugit voluptates porro alias non sequi, eveniet earum est adipisci autem eligendi. Esse?',
     },
   ]);
-
+  const router = useRouter();
+  const handleRoute = (params) => {
+    router.push('/faq');
+  };
   return (
     <div className={styles.container}>
       <Head>
@@ -125,7 +129,9 @@ function gallery() {
           </div>
           <div className={styles.bottomSection}>
             <h3>Feel Free to contact us for more information</h3>
-            <button className={styles.button}>Contact Us</button>
+            <button onClick={handleRoute} className={styles.button}>
+              Contact Us
+            </button>
           </div>
         </div>
         <Footer />

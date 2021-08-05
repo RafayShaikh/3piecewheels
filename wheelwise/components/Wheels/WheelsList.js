@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import styles from '../../styles/Wheels/WheelsList.module.css';
 import Wheel from './Wheel';
 
@@ -15,7 +16,10 @@ function WheelsList() {
     { id: 10, name: 'Hello', thumbnail: '/logoTemp.png' },
     { id: 11, name: 'Hello', thumbnail: '/logoTemp.png' },
   ];
-
+  const router = useRouter();
+  const handleRoute = (params) => {
+    router.push('/faq');
+  };
   return (
     <div className={styles.wheelsListContainer}>
       <div className={styles.topSection}>
@@ -29,7 +33,9 @@ function WheelsList() {
       </div>
       <div className={styles.bottomSection}>
         <h3>Feel Free to contact us for more information</h3>
-        <button className={styles.button}>Contact Us</button>
+        <button onClick={handleRoute} className={styles.button}>
+          Contact Us
+        </button>
       </div>
     </div>
   );

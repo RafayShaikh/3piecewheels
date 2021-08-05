@@ -38,6 +38,9 @@
   .subSec > div > h1 {
     font-size: 80px;
   }
+  .image {
+    width: 350px;
+  }
 }
 @keyframes slideLeft {
   from {

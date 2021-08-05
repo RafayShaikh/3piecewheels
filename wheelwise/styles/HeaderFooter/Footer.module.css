@@ -14,5 +14,6 @@
   color: white;
 }
 
-.image {
+.header_logo:hover {
+  cursor: pointer;
 }

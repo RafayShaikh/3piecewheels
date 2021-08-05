@@ -1,0 +1,103 @@
+.wheelContainer {
+  padding-top: 25vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 200px;
+  flex-wrap: wrap;
+}
+.imageSection,
+.infoSection {
+  width: 50%;
+  max-width: 800px;
+  min-width: 300px;
+}
+.imageSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  animation: slideLeft 0.5s 0.3s ease-in-out forwards;
+}
+.imageSection > img {
+  object-fit: contain;
+  width: 80%;
+  min-width: 300px;
+  max-width: 700px;
+}
+.infoSection {
+  opacity: 0;
+  animation: slideRight 0.5s 0.3s ease-in-out forwards;
+}
+.infoSection > h1 {
+  font-size: 70px;
+  font-weight: 400;
+  border-bottom: 1px solid red;
+}
+.infoSection > p {
+  font-size: 20px;
+}
+.buttonSection {
+  display: flex;
+}
+.button,
+.button2 {
+  border: none;
+  background-color: darkred;
+  color: white;
+  font-weight: 700;
+  font-size: larger;
+  height: 50px;
+  width: 250px;
+  border-radius: 10px;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  opacity: 0;
+  animation: slideLeft 0.51s 0.3s ease-in-out forwards;
+}
+.button:hover,
+.button2:hover {
+  box-shadow: 0px 0px 5px 1px black;
+  background-color: red;
+  cursor: pointer;
+  border-radius: 100px;
+}
+.button2 {
+  background-color: tomato;
+}
+.bottomSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.coverImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+
+    transform: translateX(0%);
+  }
+}
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+
+    transform: translateX(0%);
+  }
+}

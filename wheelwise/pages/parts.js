@@ -28,7 +28,7 @@ function parts() {
                   facilis aut rerum fuga tempore. Ab, cum?
                 </p>
               </div>
-              <img className={styles.image} src='/car5.jpg' />
+              <img className={styles.image} src='/car6.jpg' />
             </div>
           </div>
           <div className={styles.midSection}>

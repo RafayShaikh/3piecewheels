@@ -27,7 +27,6 @@ function Header() {
               <a>
                 <Image
                   className={styles.header_logo}
-                  onClick={() => clickHandler('/')}
                   src='/logoCropped.png'
                   width={400}
                   height={100}
@@ -47,7 +46,6 @@ function Header() {
               <a>
                 <Image
                   className={styles.header_logo2}
-                  onClick={() => clickHandler('/')}
                   src='/logoCropped.png'
                   width={400}
                   height={100}
