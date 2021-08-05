@@ -36,7 +36,7 @@ function wheel() {
       </div>
 
       <div className={styles.coverImage}>
-        <Image src='/car8.png' width={1900} height={900} objectFit='cover' />
+        <Image src='/car8.PNG' width={1900} height={900} objectFit='cover' />
       </div>
       <Footer />
     </div>
