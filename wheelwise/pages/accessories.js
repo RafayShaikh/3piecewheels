@@ -27,13 +27,7 @@ function accessories() {
                   facilis aut rerum fuga tempore. Ab, cum?
                 </p>
               </div>
-              <Image
-                className={styles.image}
-                src='/car3.jpg'
-                width={1000}
-                height={1000}
-                objectFit='contain'
-              />
+              <img className={styles.image} src='/car3.jpg' />
             </div>
           </div>
           <div className={styles.midSection}>

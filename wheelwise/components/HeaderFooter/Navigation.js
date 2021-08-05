@@ -32,9 +32,9 @@ function Navigation() {
             <h4 className={styles.link}>Parts</h4>
           </a>
         </Link>
-        <Link href='/faq'>
+        <Link href='/gallery'>
           <a>
-            <h4 className={styles.link}>FAQ</h4>
+            <h4 className={styles.link}>Gallery</h4>
           </a>
         </Link>
       </div>

@@ -1,23 +1,19 @@
-.topSection {
-  margin-top: 8rem;
-  height: 70vh;
+.galleryContainer {
+  padding-top: 20vh;
 }
-
-.subHead {
+.galleryHead {
+  height: 70vh;
+  padding-top: 20vh;
   display: flex;
   justify-content: flex-start;
 }
 .image {
   position: absolute;
-  opacity: 0;
   width: 100vw;
-  height: 90vh;
-  margin-top: -20vh;
-  object-fit: cover;
   opacity: 0;
   animation: slideLeft 0.5s 0.3s ease-in-out forwards;
 }
-.text {
+.headText {
   backdrop-filter: blur(3px);
   background-color: rgba(0, 0, 0, 0.473);
   color: white;
@@ -28,15 +24,40 @@
   margin-left: 10px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px 1px red;
-
   opacity: 0;
   animation: slideRight 0.5s 0.3s ease-in-out forwards;
 }
-.text > p {
-  font-size: large;
+
+.headText > p {
+  font-size: 20px;
 }
-.text > h1 {
-  font-size: xx-large;
+.headText > h1 {
+  font-size: 75px;
+  font-weight: 400;
+}
+.galleryList {
+  margin-top: 35vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  margin: 20px;
+  width: 600px;
+  height: 600px;
+  box-shadow: 0px 0px 10px 1px red;
+}
+.bottomSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .button {
   border: none;
@@ -45,35 +66,28 @@
   font-weight: 700;
   font-size: larger;
   height: 50px;
-  width: 250px;
+  width: 150px;
   border-radius: 10px;
   transition: all 0.3s;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 10px;
 }
 .button:hover {
-  box-shadow: 0px 0px 5px 1px white;
+  box-shadow: 0px 0px 5px 1px black;
   background-color: red;
   cursor: pointer;
   border-radius: 100px;
 }
-
-.arrow {
-  height: 25px;
-  width: 25px;
-}
 @media screen and (max-width: 400px) {
   .image {
-    z-index: -2;
+    position: relative;
   }
-  .subHead {
-    flex-direction: column-reverse;
+  .galleryHead {
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-  }
-  .text {
-    margin: 2px;
   }
 }
 @keyframes slideLeft {

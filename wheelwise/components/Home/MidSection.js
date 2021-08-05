@@ -1,5 +1,6 @@
 import styles from '../../styles/Home/MidSection.module.css';
 import { ArrowCircleRightIcon } from '@heroicons/react/solid';
+import Image from 'next/image';
 
 function MidSection() {
   const items = [

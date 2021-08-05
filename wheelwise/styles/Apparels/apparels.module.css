@@ -6,6 +6,9 @@
 }
 
 .image {
+  height: 700px;
+  width: 500px;
+  object-fit: contain;
   border-radius: 10px;
   opacity: 0;
   animation: slideLeft 0.5s 0.3s ease-in-out forwards;
