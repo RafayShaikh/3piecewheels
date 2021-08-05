@@ -37,3 +37,8 @@
   font-weight: 900;
   color: darkred;
 }
+@media screen and (max-width: 400px) {
+  .container > p {
+    width: 80%;
+  }
+}

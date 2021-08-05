@@ -28,9 +28,10 @@ function Header() {
                 <Image
                   className={styles.header_logo}
                   onClick={() => clickHandler('/')}
-                  src='/logoTemp.png'
-                  width={100}
+                  src='/logoCropped.png'
+                  width={400}
                   height={100}
+                  objectFit='contain'
                 />
               </a>
             </Link>
@@ -47,9 +48,9 @@ function Header() {
                 <Image
                   className={styles.header_logo2}
                   onClick={() => clickHandler('/')}
-                  src='/logoTemp.png'
-                  width={80}
-                  height={80}
+                  src='/logoCropped.png'
+                  width={400}
+                  height={100}
                 />
               </a>
             </Link>

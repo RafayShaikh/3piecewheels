@@ -9,6 +9,9 @@
   transition: all 0.5s;
   overflow-y: hidden;
   animation: loading 1.5s linear forwards;
+  background-color: rgba(0, 0, 0, 0.26);
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
 }
 .navigation_list {
   display: flex;

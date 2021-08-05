@@ -5,13 +5,14 @@ function Footer() {
   return (
     <div className={styles.footerContainer}>
       <Image
-        src='/logoTemp.png'
-        width={100}
+        className={styles.header_logo}
+        onClick={() => clickHandler('/')}
+        src='/logoCropped.png'
+        width={400}
         height={100}
         objectFit='contain'
-        className={styles.image}
       />
-      <p>Copyright, Wise Wheels, {new Date().getFullYear()}</p>
+      <p>Copyright, Wise Wheels LLC, {new Date().getFullYear()}</p>
     </div>
   );
 }

@@ -30,7 +30,7 @@ function parts() {
               </div>
               <Image
                 className={styles.image}
-                src='/car3.jpg'
+                src='/car5.jpg'
                 width={1000}
                 height={1000}
                 objectFit='contain'
