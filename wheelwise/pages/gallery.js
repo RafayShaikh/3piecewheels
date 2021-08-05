@@ -104,7 +104,7 @@ function gallery() {
         <Header />
         <div classNames={styles.galleryContainer}>
           <div className={styles.galleryHead}>
-            <img src='/car9.PNG' alt='' className={styles.image} />
+            <img src='/car9.png' alt='' className={styles.image} />
             <div className={styles.headText}>
               <h1>Gallery</h1>
               <p>
