@@ -26,6 +26,8 @@ export default function handler(req, res) {
     mail.send(data);
   } catch (error) {
     console.log(error);
+        res.status(500).json({ error });
+
   }
 
   res.status(200).json({ status: 'ok' });
