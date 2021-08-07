@@ -2,10 +2,17 @@ import styles from '../styles/FAQ/faq.module.css';
 import SingleQuestion from '../components/FAQ/Question';
 import Header from '../components/HeaderFooter/Header';
 import Footer from '../components/HeaderFooter/Footer';
-
+import ReCAPTCHA from 'react-google-recaptcha';
 import { useState } from 'react';
 import Head from 'next/head';
+
 function Faq() {
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [isVerified, setIsVerified] = useState(false);
+
   const [questions, setQuestions] = useState([
     {
       id: 1,
@@ -33,6 +40,14 @@ function Faq() {
       info: 'Locavore franzen fashion axe live-edge neutra irony synth af tilde shabby chic man braid chillwave waistcoat copper mug messenger bag. Banjo snackwave blog, microdosing thundercats migas vaporware viral lo-fi seitan ',
     },
   ]);
+
+  const handleForm = (params) => {
+    const data = { name: name, phone: phone, email: email, message: message };
+    fetch('/api/questions', {
+      method: 'post',
+      body: JSON.stringify(data),
+    });
+  };
   return (
     <div>
       <Head>
@@ -53,16 +68,44 @@ function Faq() {
               car mods, feel free to contac us bellow. We'll be happy to assist
               you with your car mods here at Wise Wheels.
             </p>
-            <div className={styles.email}>
-              <h4>Email</h4>
-              <input
-                required
-                placeholder='Please Enter Your Email'
-                type='email'
-              />
+            <div className={styles.userInfo}>
+              <div className={styles.email}>
+                <h4>Name</h4>
+                <input
+                  required
+                  placeholder='Please Enter Your Name'
+                  type='text'
+                  onChange={(e) => {
+                    setName(e.target.value);
+                  }}
+                />
+              </div>
+              <div className={styles.email}>
+                <h4>Phone</h4>
+                <input
+                  required
+                  placeholder='Please Enter Your Phone (999-999-9999)'
+                  type='tel'
+                  pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}'
+                  onChange={(e) => {
+                    setPhone(e.target.value);
+                  }}
+                />
+              </div>
+              <div className={styles.email}>
+                <h4>Email</h4>
+                <input
+                  required
+                  placeholder='Please Enter Your Email'
+                  type='email'
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
+                />
+              </div>
             </div>
             <div className={styles.text}>
-              <h4>Inqury</h4>
+              <h4>Message</h4>
               <textarea
                 required
                 placeholder='Please Enter Your Inquiry'
@@ -70,9 +113,23 @@ function Faq() {
                 id=''
                 cols='50'
                 rows='10'
+                onChange={(e) => {
+                  setMessage(e.target.value);
+                }}
               ></textarea>
             </div>
-            <button className={styles.button}>Send It</button>
+            <div className={styles.userInfo}>
+              <ReCAPTCHA
+                sitekey='6LeskeYbAAAAAEneUs9AfNLYm5rn36q556et81mw'
+                onChange={(e) => setIsVerified(true)}
+                render='explicit'
+              />
+              {isVerified && (
+                <button onClick={handleForm} className={styles.button}>
+                  Send It
+                </button>
+              )}
+            </div>
           </div>
           <h1>FAQs</h1>
           <div className={styles.container}>
