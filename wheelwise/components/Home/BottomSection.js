@@ -26,7 +26,7 @@ function BottomSection() {
                 padding: 10,
               }}
             ></Facebook>
-            <h1>WISE WHEELS</h1>
+            <h1>3~PIECE CULT</h1>
           </div>
         </a>
       </Link>

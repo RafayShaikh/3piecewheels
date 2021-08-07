@@ -14,32 +14,3 @@ a {
 * {
   box-sizing: border-box;
 }
-@keyframes loading {
-  from {
-    opacity: 0;
-    transform: rotateY(100deg);
-  }
-  to {
-    opacity: 1;
-    transform: rotateY(0deg);
-  }
-}
-@keyframes loading2 {
-  from {
-    opacity: 0;
-    transform: translateY(-100%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0%);
-  }
-}
-
-@keyframes loading3 {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
