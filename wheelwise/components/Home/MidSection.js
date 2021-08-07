@@ -1,21 +1,28 @@
 import styles from '../../styles/Home/MidSection.module.css';
 import { ArrowCircleRightIcon } from '@heroicons/react/solid';
-import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 function MidSection() {
   const items = [
-    { name: 'Accessories' },
-    { name: 'Apparels' },
-    { name: 'Parts' },
-    { name: 'Wheels' },
+    { name: 'Accessories', link: '/accessories' },
+    { name: 'Apparels', link: '/apparels' },
+    { name: 'Parts', link: '/parts' },
+    { name: 'Wheels', link: '/wheels' },
   ];
+  const router = useRouter();
+  const handleClick = (link) => {
+    router.push(link);
+  };
 
   return (
     <div className={styles.Container}>
       <h1>Let's Begin with a Category</h1>
       <div className={styles.midContainer}>
         {items.map((item) => (
-          <div className={styles.midItems}>
+          <div
+            onClick={(e) => handleClick(item.link)}
+            className={styles.midItems}
+          >
             <h1>{item.name}</h1>
             <ArrowCircleRightIcon />
           </div>
