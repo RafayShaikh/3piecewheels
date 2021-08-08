@@ -2,7 +2,7 @@ const mail = require('@sendgrid/mail');
 
 mail.setApiKey(process.env.SENDGRID_API_KEY);
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
   const body = JSON.parse(req.body);
 
   const message = `
@@ -24,7 +24,7 @@ export default function handler(req, res) {
   };
 
   try {
-    mail.send(data);
+    await mail.send(data);
   } catch (error) {
     console.log(error);
     res.status(500).json({ error });
