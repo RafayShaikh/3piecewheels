@@ -19,7 +19,7 @@ function apparels() {
           <div className={styles.topSection}>
             <div className={styles.subSec}>
               <div>
-                <h1>Apparels</h1>
+                <h1>Apparel</h1>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Ducimus eveniet quae reiciendis voluptatum dolorum repellat

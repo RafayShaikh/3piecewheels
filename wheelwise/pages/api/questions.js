@@ -12,7 +12,8 @@ export default function handler(req, res) {
   \r\n
   Email: ${body.email}\r\n
   \r\n
-  Message: ${body.message}`;
+  Message: ${body.message}
+  `;
 
   const data = {
     to: 'rafaysarr@gmail.com',
