@@ -8,7 +8,7 @@ function TopSection() {
       <div className={styles.subHead}>
         <img src='/car1.jpg' className={styles.image} />
         <div className={styles.text}>
-          <h1>Your Car Is Not Just A Tool</h1>
+          <h1>RIDING LOW IS A RITUAL .</h1>
           <p>
             Upgrade your car with the wheels, accessories, and parts that it
             deserve. Let us have a chance to make your ride represent YOU.

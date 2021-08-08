@@ -22,16 +22,17 @@ function Navigation() {
             <h4 className={styles.link}>Accessories</h4>
           </a>
         </Link>
-        <Link href='/apparels'>
-          <a>
-            <h4 className={styles.link}>Apparels</h4>
-          </a>
-        </Link>
         <Link href='/parts'>
           <a>
             <h4 className={styles.link}>Parts</h4>
           </a>
         </Link>
+        <Link href='/apparels'>
+          <a>
+            <h4 className={styles.link}>Apparel</h4>
+          </a>
+        </Link>
+
         <Link href='/gallery'>
           <a>
             <h4 className={styles.link}>Gallery</h4>

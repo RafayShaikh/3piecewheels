@@ -61,7 +61,7 @@ function Faq() {
         <div className={styles.body}>
           <h1>Contact Us</h1>
           <div className={styles.contactContainer}>
-            <h1>Let's Have A Chat</h1>
+            <h1>3PieceCult - Inquiries</h1>
             <p>
               We know that your car build is important to you that's why we have
               this portal for you. If you have a question or need help with your
