@@ -4,8 +4,12 @@ import Header from '../components/HeaderFooter/Header';
 import styles from '../styles/Accessories/accessories.module.css';
 import Head from 'next/head';
 import Footer from '../components/HeaderFooter/Footer';
+import { useSelector } from 'react-redux';
+import { selectAccessories } from '../slices/webStateSlice';
 
 function accessories() {
+  const image = useSelector(selectAccessories);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -27,7 +31,7 @@ function accessories() {
                   facilis aut rerum fuga tempore. Ab, cum?
                 </p>
               </div>
-              <img className={styles.image} src='/car3.jpg' />
+              <img className={styles.image} src={image[0]?.picture} />
             </div>
           </div>
           <div className={styles.midSection}>

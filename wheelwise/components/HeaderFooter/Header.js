@@ -3,9 +3,14 @@ import Navigation from './Navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { loadImages, selectTotal } from '../../slices/webStateSlice';
+import { db } from '../../firebase/firebase';
 
 function Header() {
   const [header, setHeader] = useState('header');
+  const dispatch = useDispatch();
+  const totalImages = useSelector(selectTotal);
   const listenScrollEvent = (event) => {
     if (window.scrollY < 73) {
       return setHeader('header');
@@ -13,9 +18,20 @@ function Header() {
       return setHeader('2');
     }
   };
-  useEffect(() => {
-    window.addEventListener('scroll', listenScrollEvent);
 
+  const fetchImages = async () => {
+    const collection = await db.collection('images').get();
+    collection.docs.map((doc) => {
+      dispatch(loadImages(doc.data()));
+    });
+  };
+
+  useEffect(() => {
+    if (totalImages <= 5) {
+      fetchImages();
+      console.log('FETCHED');
+    }
+    window.addEventListener('scroll', listenScrollEvent);
     return () => window.removeEventListener('scroll', listenScrollEvent);
   }, []);
   return (

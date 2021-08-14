@@ -5,7 +5,11 @@ import styles from '../styles/Parts/parts.module.css';
 import Footer from '../components/HeaderFooter/Footer';
 
 import Head from 'next/head';
+import { useSelector } from 'react-redux';
+import { selectParts } from '../slices/webStateSlice';
 function parts() {
+  const image = useSelector(selectParts);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -28,7 +32,7 @@ function parts() {
                   facilis aut rerum fuga tempore. Ab, cum?
                 </p>
               </div>
-              <img className={styles.image} src='/car6.jpg' />
+              <img className={styles.image} src={image[0]?.picture} />
             </div>
           </div>
           <div className={styles.midSection}>

@@ -7,6 +7,7 @@ import MidSection from '../components/Home/MidSection';
 import TopSection from '../components/Home/TopSection';
 import styles from '../styles/Home.module.css';
 import Footer from '../components/HeaderFooter/Footer';
+import ContactSection from '../components/ContactSection';
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
           <TopSection />
           <MidSection />
           <BottomSection />
+          <ContactSection />;
         </div>
         <Footer />
       </main>
