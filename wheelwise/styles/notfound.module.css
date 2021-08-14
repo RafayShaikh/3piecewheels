@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 5%;
+  max-width: 800px;
+  min-width: 300px;
+  padding: 2%;
+  flex-direction: column;
+  background-color: rgba(139, 0, 0, 0.548);
+  border-radius: 10px;
+  box-shadow: 0px 12px 10px -8px black;
+  color: white;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  background-color: darkred;
+  box-shadow: 0px 0px 10px -1px darkred;
+  transition: all 0.3s;
+}
+.logo:hover {
+  box-shadow: 0px 0px 20px 1px darkred;
+  cursor: pointer;
+  transform: scale(1.2);
+}
+.logo > h1 {
+  font-style: italic;
+  font-weight: 900;
+  color: white;
+}

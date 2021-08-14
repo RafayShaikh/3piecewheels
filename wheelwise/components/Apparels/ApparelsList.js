@@ -1,6 +1,6 @@
-import { useRouter } from 'next/router';
 import styles from '../../styles/Apparels/ApparelsList.module.css';
 import Apparel from './Apparel';
+import ContactSection from '../ContactSection';
 
 function ApparelsList() {
   const apparels = [
@@ -16,10 +16,7 @@ function ApparelsList() {
     { id: 10, name: 'Hello', thumbnail: '/logoTemp.png' },
     { id: 11, name: 'Hello', thumbnail: '/logoTemp.png' },
   ];
-  const router = useRouter();
-  const handleRoute = (params) => {
-    router.push('/faq');
-  };
+
   return (
     <div className={styles.apparelsListContainer}>
       <div className={styles.topSection}>
@@ -31,12 +28,7 @@ function ApparelsList() {
           <Apparel apparel={apparel} />
         ))}
       </div>
-      <div className={styles.bottomSection}>
-        <h3>Feel Free to contact us for more information</h3>
-        <button onClick={handleRoute} className={styles.button}>
-          Contact Us
-        </button>
-      </div>
+      <ContactSection />
     </div>
   );
 }

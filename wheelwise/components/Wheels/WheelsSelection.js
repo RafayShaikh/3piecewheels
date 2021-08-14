@@ -2,9 +2,12 @@ import Image from 'next/image';
 import { useState } from 'react';
 import styles from '../../styles/Wheels/WheelsSelection.module.css';
 import { SearchIcon } from '@heroicons/react/solid';
+import { useSelector } from 'react-redux';
+import { selectWheels } from '../../slices/webStateSlice';
 
 function WheelsSelection() {
   const [wheelSize, setWheelSize] = useState(null);
+  const image = useSelector(selectWheels);
 
   const handleWheelChange = (e) => {
     e.preventDefault();
@@ -12,7 +15,7 @@ function WheelsSelection() {
   };
   return (
     <div className={styles.wheelsContainer}>
-      <img src='/car2.jpg' className={styles.image} />
+      <img src={image[0]?.picture} className={styles.image} />
       <div className={styles.formContainer}>
         <h1>Find Wheels That Fit Your Style</h1>
         <h4>Select A Wheel Size</h4>

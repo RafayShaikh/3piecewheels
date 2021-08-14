@@ -1,0 +1,124 @@
+.admin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+.form {
+  background-color: darkred;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px -5px;
+  padding: 20px;
+}
+.form > select {
+  width: 280px;
+  max-width: 280px;
+  min-width: 200px;
+  height: 40px;
+  max-height: 40px;
+  min-height: 35px;
+  border-radius: 10px;
+  padding: 5px;
+  font-weight: bolder;
+}
+.form > select > option {
+  font-weight: bold;
+}
+.form > input {
+  width: 280px;
+  max-width: 280px;
+  min-width: 200px;
+  height: 40px;
+  max-height: 40px;
+  min-height: 35px;
+  border-radius: 10px;
+  padding: 5px;
+  font-weight: bolder;
+}
+.button {
+  border: none;
+  background-color: red;
+  color: white;
+  font-weight: 700;
+  font-size: larger;
+  height: 50px;
+  width: 150px;
+  border-radius: 10px;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+.button:hover {
+  border: solid 1px white;
+
+  box-shadow: 0px 0px 5px 1px white;
+  background-color: darkred;
+  cursor: pointer;
+  border-radius: 100px;
+}
+.adminLogin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding-bottom: 40px;
+  padding-top: 30px;
+  flex-direction: column;
+  margin: 10px;
+}
+.caution {
+  display: flex;
+  background-color: darkred;
+  padding: 15px 10px;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 2px 1px black;
+  font-size: large;
+  margin: 0px 1px;
+}
+.adminCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5%;
+  margin-top: 5%;
+  padding: 5%;
+  background-color: rgba(139, 0, 0, 0.082);
+  border-radius: 10px;
+  box-shadow: 0 0 10px 1px gray;
+  color: black;
+}
+.adminCard > .MuiSvgIcon-root {
+  zoom: 4;
+  padding: 5px;
+  border-bottom: 1px solid black;
+}
+.adminCard:hover {
+  box-shadow: 0 0 10px 1px black;
+}
+
+.adminCard > h1 {
+  display: flex;
+  cursor: pointer;
+  padding: 15px;
+  margin: 10%;
+  border-radius: 10px;
+  background-color: darkred;
+  color: white;
+  font-weight: bolder;
+  transition: all 0.3s;
+  justify-content: center;
+  align-items: center;
+  animation: loading 0.8s linear;
+}
+.adminCard > h1:hover {
+  background-color: darkred;
+  color: white;
+  border-radius: 10px;
+}

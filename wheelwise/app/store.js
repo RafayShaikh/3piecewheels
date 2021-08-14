@@ -1,8 +1,10 @@
-import { configureStore } from "@reduxjs/toolkit";
-import basketReducer from "../slices/basketSlice";
+import { configureStore } from '@reduxjs/toolkit';
+import personState from '../slices/personStateSlice';
+import webState from '../slices/webStateSlice';
 
 export const store = configureStore({
   reducer: {
-    basket: basketReducer,
+    person: personState,
+    web: webState,
   },
 });

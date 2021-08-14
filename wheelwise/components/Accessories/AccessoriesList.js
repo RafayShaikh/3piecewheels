@@ -1,13 +1,8 @@
-import { useRouter } from 'next/router';
 import styles from '../../styles/Accessories/AccessoriesList.module.css';
 import Accessory from './Accessory';
+import ContactSection from '../ContactSection';
 
 function AccessoriesList() {
-  const router = useRouter();
-  const handleRoute = (params) => {
-    router.push('/faq');
-  };
-
   const accessories = [
     { id: 1, name: 'Hello', thumbnail: '/logoTemp.png' },
     { id: 2, name: 'Hello', thumbnail: '/logoTemp.png' },
@@ -33,12 +28,7 @@ function AccessoriesList() {
         ))}
       </div>
 
-      <div className={styles.bottomSection}>
-        <h3>Feel Free to contact us for more information</h3>
-        <button onClick={handleRoute} className={styles.button}>
-          Contact Us
-        </button>
-      </div>
+      <ContactSection />
     </div>
   );
 }

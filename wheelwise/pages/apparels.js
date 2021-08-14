@@ -4,8 +4,12 @@ import Header from '../components/HeaderFooter/Header';
 import styles from '../styles/Apparels/apparels.module.css';
 import Head from 'next/head';
 import Footer from '../components/HeaderFooter/Footer';
+import { selectApparel } from '../slices/webStateSlice';
+import { useSelector } from 'react-redux';
 
 function apparels() {
+  const image = useSelector(selectApparel);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -27,7 +31,7 @@ function apparels() {
                   facilis aut rerum fuga tempore. Ab, cum?
                 </p>
               </div>
-              <img className={styles.image} src='/car4.jpg' />
+              <img className={styles.image} src={image[0]?.picture} />
             </div>
           </div>
           <div className={styles.midSection}>

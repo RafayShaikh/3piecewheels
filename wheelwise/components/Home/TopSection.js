@@ -1,12 +1,17 @@
 import Image from 'next/image';
 import styles from '../../styles/Home/TopSection.module.css';
 import { ArrowCircleDownIcon } from '@heroicons/react/solid';
+import { useSelector } from 'react-redux';
+import { selectHome } from '../../slices/webStateSlice';
+import { useEffect } from 'react';
 
 function TopSection() {
+  const image = useSelector(selectHome);
+
   return (
     <div className={styles.topSection}>
       <div className={styles.subHead}>
-        <img src='/car1.jpg' className={styles.image} />
+        <img src={image[0]?.picture} className={styles.image} />
         <div className={styles.text}>
           <h1>RIDING LOW IS A RITUAL .</h1>
           <p>
