@@ -29,7 +29,6 @@ function Header() {
   useEffect(() => {
     if (totalImages <= 5) {
       fetchImages();
-      console.log('FETCHED');
     }
     window.addEventListener('scroll', listenScrollEvent);
     return () => window.removeEventListener('scroll', listenScrollEvent);

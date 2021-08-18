@@ -13,6 +13,8 @@
 .midSection {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   width: 80vw;
   max-width: 90vw;
   min-width: 60vw;
