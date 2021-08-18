@@ -2,16 +2,10 @@ import styles from '../../styles/Gallery/gallery.module.css';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 function GalleryItem({ item }) {
   const [picNum, setPicNum] = useState(1);
-  const style = {
-    largeIcon: {
-      width: 60,
-      height: 60,
-    },
-  };
 
   const pictureCount = (num, max) => {
     if (num < 0 && picNum > 1) {
@@ -22,7 +16,6 @@ function GalleryItem({ item }) {
     }
   };
 
-  useEffect(() => {}, []);
   return (
     <div className={styles.item}>
       <div className={styles.icons}>

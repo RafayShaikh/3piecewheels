@@ -1,15 +1,5 @@
 .header_container {
-  background-image: linear-gradient(
-    to right,
-    #8b0000,
-    #af2222,
-    #cf7171,
-    #e0b0b0,
-    #e0b0b0,
-    #cf7171,
-    #af2222,
-    #8c0000
-  );
+  background-image: linear-gradient(to right, #8b0000, #ff8484, #8c0000);
   height: 20vh;
   width: 100%;
   z-index: 30;
@@ -58,17 +48,7 @@
 }
 
 .header_container2 {
-  background-image: linear-gradient(
-    to right,
-    #8b0000,
-    #af2222,
-    #cf7171,
-    #e0b0b0,
-    #e0b0b0,
-    #cf7171,
-    #af2222,
-    #8c0000
-  );
+  background-image: linear-gradient(to right, #8b0000, #ff8484, #8c0000);
   position: fixed;
   height: 10%;
   width: 100%;

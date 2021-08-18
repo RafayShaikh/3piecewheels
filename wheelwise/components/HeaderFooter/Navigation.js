@@ -27,7 +27,7 @@ function Navigation() {
             <h4 className={styles.link}>Parts</h4>
           </a>
         </Link>
-        <Link href='/apparels'>
+        <Link href='/apparel'>
           <a>
             <h4 className={styles.link}>Apparel</h4>
           </a>
