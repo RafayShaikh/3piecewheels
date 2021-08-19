@@ -40,13 +40,7 @@ function Header() {
           <div className={styles.header_left}>
             <Link href='/'>
               <a>
-                <Image
-                  className={styles.header_logo}
-                  src='/logoCropped.png'
-                  width={400}
-                  height={100}
-                  objectFit='contain'
-                />
+                <img className={styles.header_logo} src='/logoCropped.png' />
               </a>
             </Link>
             <div className={styles.header_navigation}>
@@ -59,12 +53,7 @@ function Header() {
           <div className={styles.header_left2}>
             <Link href='/'>
               <a>
-                <Image
-                  className={styles.header_logo2}
-                  src='/logoCropped.png'
-                  width={400}
-                  height={100}
-                />
+                <img className={styles.header_logo2} src='/logoCropped.png' />
               </a>
             </Link>
             <div className={styles.header_navigation2}>

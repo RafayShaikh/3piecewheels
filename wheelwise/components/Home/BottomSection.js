@@ -6,7 +6,6 @@ import styles from '../../styles/Home/BottomSection.module.css';
 function BottomSection() {
   return (
     <div className={styles.container}>
-      <Image src='/car7.png' width={2000} height={700} objectFit='contain' />
       <h1>Join The Community</h1>
       <p>
         Here at Wheel Wise group we dissuss several car modification topis like

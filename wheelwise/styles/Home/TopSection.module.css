@@ -1,34 +1,29 @@
 .topSection {
-  margin-top: 8rem;
+  margin-top: 5rem;
   height: 70vh;
 }
 
 .subHead {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column-reverse;
 }
 .image {
-  position: absolute;
-  opacity: 0;
   width: 100vw;
-  height: 90vh;
-  margin-top: -20vh;
-  object-fit: cover;
+  object-fit: contain;
   opacity: 0;
   animation: slideLeft 0.5s 0.3s ease-in-out forwards;
 }
 .text {
   backdrop-filter: blur(3px);
-  background-color: rgba(0, 0, 0, 0.473);
+  background-color: rgba(0, 0, 0, 0.712);
   color: white;
-  position: relative;
-  z-index: 10;
-  max-width: 600px;
-  padding: 18px;
-  margin-left: 10px;
+  margin: auto;
+  max-width: 40em;
+  padding: 2em;
   border-radius: 10px;
   box-shadow: 0px 0px 10px 1px red;
-
   opacity: 0;
   animation: slideRight 0.5s 0.3s ease-in-out forwards;
 }
@@ -45,7 +40,7 @@
   font-weight: 700;
   font-size: larger;
   height: 50px;
-  width: 250px;
+  width: 200px;
   border-radius: 10px;
   transition: all 0.3s;
   display: flex;
@@ -63,17 +58,30 @@
   height: 25px;
   width: 25px;
 }
-@media screen and (max-width: 400px) {
-  .image {
-    z-index: -2;
-  }
+@media only screen and (min-device-width: 830px) {
   .subHead {
-    flex-direction: column-reverse;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
   }
+  .topSection {
+    margin-top: 8rem;
+    height: 70vh;
+  }
+
+  .image {
+    position: absolute;
+    opacity: 0;
+    width: 100vw;
+    height: 90vh;
+    object-fit: cover;
+    opacity: 0;
+    animation: slideLeft 0.5s 0.3s ease-in-out forwards;
+  }
+
   .text {
-    margin: 2px;
+    right: 25%;
+    bottom: 10em;
+    position: relative;
+    z-index: 10;
   }
 }
 @keyframes slideLeft {
