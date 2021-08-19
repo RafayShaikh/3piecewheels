@@ -3,12 +3,13 @@
 }
 .galleryHead {
   height: 70vh;
-  padding-top: 20vh;
+  padding-top: 6rem;
   display: flex;
-  justify-content: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .image {
-  position: absolute;
   width: 100vw;
   opacity: 0;
   animation: slideLeft 0.5s 0.3s ease-in-out forwards;
@@ -17,11 +18,11 @@
   backdrop-filter: blur(3px);
   background-color: rgba(0, 0, 0, 0.473);
   color: white;
-  position: relative;
   z-index: 10;
+  width: 95%;
   max-width: 600px;
-  padding: 18px;
-  margin-left: 10px;
+  padding: 1em;
+  margin: auto;
   border-radius: 10px;
   box-shadow: 0px 0px 10px 1px red;
   opacity: 0;
@@ -29,14 +30,13 @@
 }
 
 .headText > p {
-  font-size: 20px;
+  font-size: 1em;
 }
 .headText > h1 {
-  font-size: 75px;
+  font-size: 3.5em;
   font-weight: 400;
 }
 .galleryList {
-  margin-top: 35vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -47,11 +47,11 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 5px;
-  margin: 20px;
+  padding: 0.5em;
+  margin: 1.5em;
   width: max-content;
   height: max-content;
-  box-shadow: 0px 8px 20px -12px darkred;
+  box-shadow: 0px 8px 20px -12px black;
 }
 .itemImage {
   height: 100%;
@@ -87,14 +87,14 @@
   color: white;
   font-weight: 700;
   font-size: larger;
-  height: 50px;
-  width: 150px;
+  height: auto;
+  width: auto;
+  padding: 1em;
   border-radius: 10px;
   transition: all 0.3s;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 10px;
   margin: auto;
 }
 .button:hover {
@@ -103,16 +103,42 @@
   cursor: pointer;
   border-radius: 100px;
 }
-@media screen and (max-width: 400px) {
-  .image {
-    position: relative;
-  }
+@media only screen and (min-device-width: 690px) {
   .galleryHead {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    padding-top: 10em;
+  }
+  .image {
+    position: absolute;
+    z-index: 1;
+  }
+  .headText {
+    position: relative;
+    width: 30%;
+    height: auto;
+    right: 32%;
+    bottom: 10%;
   }
 }
+@media only screen and (min-device-width: 1300px) {
+  /* above cellphones */
+
+  .galleryHead {
+    padding-top: 10em;
+    height: 100vh;
+  }
+  .image {
+    position: absolute;
+    z-index: 1;
+  }
+  .headText {
+    position: relative;
+    width: 30%;
+    height: auto;
+    right: 32%;
+    bottom: 10%;
+  }
+}
+
 @keyframes slideLeft {
   from {
     opacity: 0;

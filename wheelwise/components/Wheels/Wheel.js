@@ -1,28 +1,115 @@
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 import styles from '../../styles/Wheels/Wheel.module.css';
 import { useRouter } from 'next/router';
+import { db, storage } from '../../firebase/firebase';
+import { selectPerson } from '../../slices/personStateSlice';
+import { useSelector } from 'react-redux';
 
-function Wheel({ wheel }) {
+function Wheel({ id, item }) {
+  const [deleteState, setDeleteState] = useState(null);
+  const dataSlice = useSelector(selectPerson);
+
   const router = useRouter();
+  const deleteItem = () => {
+    if (dataSlice.email !== 'shaikhabdurrafay@gmail.com') {
+      return;
+    }
+    if (!deleteState) {
+      console.log(deleteState);
+      console.log('returned at delete state');
+      return;
+    }
+    if (!deleteState.pictures) {
+      console.log(deleteState.pictures);
+      console.log('returned at pictures state');
+      return;
+    }
+    deleteState.pictures.forEach((picture) => {
+      var storageRef = storage.refFromURL(picture);
+      if (!storageRef) {
+        return;
+      }
+      storageRef
+        .delete()
+        .then()
+        .catch((error) => {
+          console.log(error);
+        });
+    });
+  };
+  const deleteEntry = async (docId) => {
+    if (dataSlice.email !== 'shaikhabdurrafay@gmail.com') {
+      return;
+    }
+
+    const ref = db.collection('wheels').doc(docId);
+    const data = await ref.get();
+
+    setDeleteState(data.data());
+
+    const collectionRef = await db.collection('wheels');
+    collectionRef
+      .doc(docId)
+      .delete()
+      .then(() => {
+        alert('Succefully Deleted The Record');
+      });
+  };
   const handleClick = (e) => {
     router.push({
-      pathname: '/wheels/wheel',
+      pathname: `/wheels/${JSON.stringify(id)}`,
       query: {
-        id: wheel.id,
-        picture: wheel.thumbnail,
-        name: wheel.name,
+        id: JSON.stringify(id),
+        name: JSON.stringify(item.name),
+        description: JSON.stringify(item.description),
+        pictures: JSON.stringify(item.pictures),
       },
     });
   };
+
+  const [truncateDescription, setTruncateDescription] = useState(null);
+
+  const truncate = (input) =>
+    input.length > 100
+      ? setTruncateDescription(`${input.substring(0, 100)}...`)
+      : setTruncateDescription(input);
+
+  useEffect(() => {
+    truncate(item?.description);
+  }, []);
+  useEffect(() => {
+    if (deleteState) {
+      deleteItem();
+    }
+  }, [deleteState]);
   return (
-    <div onClick={handleClick} className={styles.wheelThumbnail}>
-      <Image
-        src={wheel.thumbnail}
-        width={100}
-        height={100}
-        className={styles.image}
-      />
-      <h2>{wheel.name}</h2>
+    <div className={styles.wheelThumbnail}>
+      <div onClick={handleClick}>
+        <div className={styles.icons}>
+          {item?.pictures.length > 0 && (
+            <div className={styles.image}>
+              <Image
+                src={item.pictures[0]}
+                height={400}
+                width={400}
+                objectFit='contain'
+                blurDataURL='/car9.png'
+                placeholder='blur'
+                loading='eager'
+                quality={100}
+              />
+            </div>
+          )}
+        </div>
+        <h1>{item?.name}</h1>
+        <p>{truncateDescription}</p>
+      </div>
+      {dataSlice?.email === 'shaikhabdurrafay@gmail.com' && (
+        <button className={styles.button} onClick={() => deleteEntry(id)}>
+          Delete
+        </button>
+      )}
     </div>
   );
 }

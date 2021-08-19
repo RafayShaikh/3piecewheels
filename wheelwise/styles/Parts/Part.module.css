@@ -4,11 +4,15 @@
   align-items: center;
   flex-direction: column;
   height: auto;
-  width: 450px;
+  width: 80%;
+  max-width: 25em;
+  min-width: 10em;
   padding: 15px;
   color: black;
   box-shadow: 0px 5px 14px -8px black;
   margin: 40px;
+  margin-left: 2em;
+  margin-right: 2em;
   border-radius: 10px;
   transition: all 0.3s;
 }
@@ -45,14 +49,14 @@
   color: white;
   font-weight: 700;
   font-size: larger;
-  height: 50px;
-  width: 150px;
+  height: auto;
+  width: auto;
+  padding: 1em;
   border-radius: 10px;
   transition: all 0.3s;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 10px;
   margin: auto;
 }
 .button:hover {

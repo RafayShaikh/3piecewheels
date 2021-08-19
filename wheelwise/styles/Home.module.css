@@ -5,11 +5,11 @@
 }
 
 .Body {
-  padding-top: 25vh;
+  padding-top: 2vh;
 }
-@media screen and (max-width: 400px) {
+@media only screen and (min-device-width: 840px) {
   .Body {
-    padding-top: 2vh;
+    padding-top: 25vh;
   }
 }
 @keyframes loading {
