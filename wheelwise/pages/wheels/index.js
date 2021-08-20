@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import ApparelList from '../../components/Wheels/WheelsList';
 import Header from '../../components/HeaderFooter/Header';
-import styles from '../../styles/Wheels/wheels.module.css';
+import styles from '../../styles/Wheels/Wheels.module.css';
 import Head from 'next/head';
 import Footer from '../../components/HeaderFooter/Footer';
 import { selectWheels } from '../../slices/webStateSlice';
