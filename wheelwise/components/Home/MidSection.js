@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 function MidSection() {
   const items = [
     { name: 'Accessories', link: '/accessories' },
-    { name: 'Apparels', link: '/apparels' },
+    { name: 'Apparels', link: '/apparel' },
     { name: 'Parts', link: '/parts' },
     { name: 'Wheels', link: '/wheels' },
   ];

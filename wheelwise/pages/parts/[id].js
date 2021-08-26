@@ -8,9 +8,13 @@ import styles from '../../styles/Wheels/wheelDetail.module.css';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import { db } from '../../firebase/firebase';
+import { useDispatch } from 'react-redux';
+import { loadCart } from '../../slices/cartSlice';
+import ContactSection from '../../components/ContactSection';
 
 function parts() {
   const router = useRouter();
+  const dispatch = useDispatch();
   const query = router.query;
   const [data, setData] = useState(null);
   const [picNum, setPicNum] = useState(1);
@@ -22,6 +26,10 @@ function parts() {
       setPicNum(picNum + 1);
     }
   };
+  const addToCart = (e) => {
+    e.preventDefault();
+    dispatch(loadCart(data));
+  };
   useEffect(async () => {
     if (router.isReady) {
       if (query.id && query.description && query.name && query.pictures) {
@@ -29,6 +37,7 @@ function parts() {
           id: JSON.parse(query.id),
           description: JSON.parse(query.description),
           name: JSON.parse(query.name),
+          price: JSON.parse(query.price),
           pictures: JSON.parse(query.pictures),
         });
       } else {
@@ -80,18 +89,24 @@ function parts() {
         </div>
         <div className={styles.infoSection}>
           <h1>{data?.name}</h1>
+          <h2>
+            {data?.price &&
+              new Intl.NumberFormat('en-us', {
+                style: 'currency',
+                currency: 'USD',
+              }).format(data?.price / 100)}
+          </h2>
           <p>{data?.description}</p>
           <div className={styles.buttonSection}>
-            <button className={styles.button}>Get It Now</button>
+            <button onClick={addToCart} className={styles.button}>
+              Add to Cart
+            </button>
             <button className={styles.button2}>Share</button>
           </div>
         </div>
       </div>
 
-      <div className={styles.bottomSection}>
-        <h3>Feel Free to contact us for more information</h3>
-        <button className={styles.button}>Contact Us</button>
-      </div>
+      <ContactSection />
 
       <div className={styles.coverImage}>
         <Image src='/car8.png' width={1900} height={900} objectFit='cover' />

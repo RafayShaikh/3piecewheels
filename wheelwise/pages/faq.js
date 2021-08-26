@@ -121,7 +121,7 @@ function Faq() {
             <div className={styles.userInfo}>
               <ReCAPTCHA
                 sitekey='6LeskeYbAAAAAEneUs9AfNLYm5rn36q556et81mw'
-                onChange={(e) => setIsVerified(true)}
+                onChange={(e) => setIsVerified(!isVerified)}
                 render='explicit'
               />
               {isVerified && (

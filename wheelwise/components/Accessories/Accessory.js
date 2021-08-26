@@ -63,9 +63,11 @@ function Accessory({ id, item }) {
         id: JSON.stringify(id),
         name: JSON.stringify(item.name),
         description: JSON.stringify(item.description),
+        price: JSON.stringify(item?.price),
         pictures: JSON.stringify(item.pictures),
       },
     });
+    console.log(JSON.stringify(item.price));
   };
 
   const [truncateDescription, setTruncateDescription] = useState(null);
@@ -103,6 +105,12 @@ function Accessory({ id, item }) {
           )}
         </div>
         <h1>{item?.name}</h1>
+        <h1>
+          {new Intl.NumberFormat('en-us', {
+            style: 'currency',
+            currency: 'USD',
+          }).format(item?.price / 100)}
+        </h1>
         <p>{truncateDescription}</p>
       </div>
       {dataSlice?.email === 'shaikhabdurrafay@gmail.com' && (

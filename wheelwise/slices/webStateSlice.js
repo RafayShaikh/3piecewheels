@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   coverImages: [],
+  isCheckout: false,
 };
 
 export const webStateSlice = createSlice({
@@ -11,12 +12,16 @@ export const webStateSlice = createSlice({
     loadImages: (state, action) => {
       state.coverImages = [...state.coverImages, action.payload];
     },
+    checkoutConfirmation: (state, action) => {
+      state.isCheckout = action.payload;
+    },
   },
 });
 
-export const { loadImages } = webStateSlice.actions;
+export const { loadImages, checkoutConfirmation } = webStateSlice.actions;
 
 // Selectors - This is how we pull information from the Global store slice
+export const selectCheckout = (state) => state.web.isCheckout;
 export const selectCoverImages = (state) => state.web.coverImages;
 export const selectTotal = (state) =>
   state.web.coverImages.reduce((total) => total + 1, 0);
