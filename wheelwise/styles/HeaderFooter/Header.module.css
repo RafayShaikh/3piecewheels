@@ -65,6 +65,33 @@
   overflow-y: hidden;
   color: white;
 }
+.cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: red;
+  position: fixed;
+  right: 0;
+  top: 50%;
+  width: 8em;
+  margin-top: -2.5em;
+  padding: 5px;
+  z-index: 50;
+  height: 5em;
+  width: 5em;
+  background-color: lightgray;
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+.cart:hover {
+  border: 1px solid darkred;
+  cursor: pointer;
+  border-radius: 100px;
+}
+.cart > span {
+  font-weight: 700;
+}
 .header_left2 {
   display: flex;
   justify-content: center;

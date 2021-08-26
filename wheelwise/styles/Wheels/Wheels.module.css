@@ -5,7 +5,9 @@
   background-color: rgba(255, 0, 0, 0.062);
   height: 70vh;
 }
-
+.midSection {
+  padding-top: 10%;
+}
 .image {
   height: 700px;
   width: 500px;

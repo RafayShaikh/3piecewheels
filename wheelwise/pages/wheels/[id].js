@@ -8,8 +8,15 @@ import styles from '../../styles/Wheels/wheelDetail.module.css';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import { db } from '../../firebase/firebase';
+import { loadCart, selectBolt, selectDiameter } from '../../slices/cartSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import ContactSection from '../../components/ContactSection';
 
 function wheels() {
+  const bolt = useSelector(selectBolt);
+  const diameter = useSelector(selectDiameter);
+
+  const dispatch = useDispatch();
   const router = useRouter();
   const query = router.query;
   const [data, setData] = useState(null);
@@ -22,6 +29,10 @@ function wheels() {
       setPicNum(picNum + 1);
     }
   };
+  const addToCart = (e) => {
+    e.preventDefault();
+    dispatch(loadCart(data));
+  };
   useEffect(async () => {
     if (router.isReady) {
       if (query.id && query.description && query.name && query.pictures) {
@@ -29,6 +40,9 @@ function wheels() {
           id: JSON.parse(query.id),
           description: JSON.parse(query.description),
           name: JSON.parse(query.name),
+          bolt: bolt,
+          diameter: diameter,
+          price: JSON.parse(query.price),
           pictures: JSON.parse(query.pictures),
         });
       } else {
@@ -80,22 +94,45 @@ function wheels() {
         </div>
         <div className={styles.infoSection}>
           <h1>{data?.name}</h1>
+          <h2>
+            {data?.price &&
+              new Intl.NumberFormat('en-us', {
+                style: 'currency',
+                currency: 'USD',
+              }).format(data?.price / 100)}
+          </h2>
           <p>{data?.description}</p>
-          <div className={styles.buttonSection}>
-            <button className={styles.button}>Get It Now</button>
-            <button className={styles.button2}>Share</button>
-          </div>
+
+          {diameter ? (
+            <p>
+              <h3>Selected Diameter</h3>
+              {diameter}
+            </p>
+          ) : (
+            <h3>Please Select Diameter on Wheels Page</h3>
+          )}
+
+          {bolt ? (
+            <p>
+              <h3>Selected Bolt Pattern</h3>
+              {bolt}
+            </p>
+          ) : (
+            <h3>Please Select Bolth Pattern On Wheels Page</h3>
+          )}
+          {bolt && diameter && (
+            <div className={styles.buttonSection}>
+              <button onClick={addToCart} className={styles.button}>
+                Add to cart
+              </button>
+              <button className={styles.button2}>Share</button>
+            </div>
+          )}
         </div>
       </div>
 
-      <div className={styles.bottomSection}>
-        <h3>Feel Free to contact us for more information</h3>
-        <button className={styles.button}>Contact Us</button>
-      </div>
+      <ContactSection />
 
-      <div className={styles.coverImage}>
-        <Image src='/car8.png' width={1900} height={900} objectFit='cover' />
-      </div>
       <Footer />
     </div>
   );

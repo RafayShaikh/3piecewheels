@@ -6,8 +6,13 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadImages, selectTotal } from '../../slices/webStateSlice';
 import { db } from '../../firebase/firebase';
+import { ShoppingCartIcon } from '@heroicons/react/solid';
+import router from 'next/router';
+import { selectCartItems } from '../../slices/cartSlice';
 
 function Header() {
+  const items = useSelector(selectCartItems);
+
   const [header, setHeader] = useState('header');
   const dispatch = useDispatch();
   const totalImages = useSelector(selectTotal);
@@ -38,6 +43,13 @@ function Header() {
       {header === 'header' ? (
         <div className={styles.header_container}>
           <div className={styles.header_left}>
+            <div
+              onClick={() => router.push('/checkout')}
+              className={styles.cart}
+            >
+              <span>{items.length}</span>
+              <ShoppingCartIcon className={styles.carIcon} />
+            </div>
             <Link href='/'>
               <a>
                 <img className={styles.header_logo} src='/logoCropped.png' />
@@ -51,6 +63,13 @@ function Header() {
       ) : (
         <div className={styles.header_container2}>
           <div className={styles.header_left2}>
+            <div
+              onClick={() => router.push('/checkout')}
+              className={styles.cart}
+            >
+              <span>{items.length}</span>
+              <ShoppingCartIcon />
+            </div>
             <Link href='/'>
               <a>
                 <img className={styles.header_logo2} src='/logoCropped.png' />
