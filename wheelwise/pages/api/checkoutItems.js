@@ -12,6 +12,8 @@ export default async function handler(req, res) {
   \r\n
   Email: ${body.email}\r\n
   \r\n
+   Total Price: ${body.total}\r\n
+  \r\n
   Items Needed: ${body.items}
   `;
 
