@@ -4,13 +4,13 @@ import { useSelector } from 'react-redux';
 import Checkout from '../../components/Checkout/Checkout';
 import Footer from '../../components/HeaderFooter/Footer';
 import Header from '../../components/HeaderFooter/Header';
-import { selectCartItems, selectCartTotal } from '../../slices/cartSlice';
+import { selectCartItems } from '../../slices/cartSlice';
 import styles from '../../styles/checkout.module.css';
 import ContactSection from '../../components/ContactSection';
 
 function index() {
   const items = useSelector(selectCartItems);
-  const total = useSelector(selectCartTotal);
+
   const truncate = (input) => {
     input?.length > 100
       ? setTruncateDescription(`${input.substring(0, 100)}...`)
@@ -67,6 +67,13 @@ function index() {
                     <h1>Item</h1>
                     <p>{item.name}</p>
                     <img src={item.pictures[0]} alt='' />
+                    <h1>Price</h1>
+                    <h1>
+                      {new Intl.NumberFormat('en-us', {
+                        style: 'currency',
+                        currency: 'USD',
+                      }).format(item?.price / 100)}
+                    </h1>
                     <h1>Description</h1>
                     <p>{item.description}</p>
                   </div>

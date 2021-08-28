@@ -31,6 +31,8 @@ export const { loadCart, clearCartItems, loadBolt, loadDiameter } =
 // Selectors - This is how we pull information from the Global store slice
 export const selectBolt = (state) => state.cart.bolt;
 export const selectDiameter = (state) => state.cart.diameter;
+export const selectTotalPrice = (state) =>
+  state.cart.items.reduce((total, item) => total + item.price, 0);
 
 export const selectCartItems = (state) => state.cart.items;
 export const selectCartTotal = (state) =>

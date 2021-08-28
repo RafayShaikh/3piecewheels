@@ -1,6 +1,10 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectCartItems, clearCartItems } from '../../slices/cartSlice';
+import {
+  selectCartItems,
+  clearCartItems,
+  selectTotalPrice,
+} from '../../slices/cartSlice';
 import styles from '../../styles/checkout.module.css';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { useRouter } from 'next/router';
@@ -12,7 +16,7 @@ function Checkout() {
   const [phone, setPhone] = useState(null);
   const [isVerified, setIsVerified] = useState(false);
   const router = useRouter();
-
+  const total = useSelector(selectTotalPrice);
   const items = useSelector(selectCartItems);
   const [proceeded, setProceeded] = useState(false);
   const dispatch = useDispatch();
@@ -33,12 +37,14 @@ function Checkout() {
       name: name,
       phone: phone,
       email: email,
+      total: total / 100,
       items: items.map(
         (item) =>
-          `{ ITEM: ${item.name}, DESCRIPTION: ${item.description}, BOLT: ${item.bolt}, DIAMETER: ${item.diameter}}`
+          `{ ITEM: ${item.name}, PRICE: ${item.price / 100}, DESCRIPTION: ${
+            item.description
+          }, BOLT: ${item.bolt}, DIAMETER: ${item.diameter}}\r\n`
       ),
     };
-    console.log(data);
     fetch('/api/checkoutItems', {
       method: 'post',
       body: JSON.stringify(data),
@@ -57,6 +63,13 @@ function Checkout() {
       {proceeded === false ? (
         <div className={styles.buttons}>
           <h1>Cart Options</h1>
+          <h1>Total Price</h1>
+          <h1>
+            {new Intl.NumberFormat('en-us', {
+              style: 'currency',
+              currency: 'USD',
+            }).format(total / 100)}
+          </h1>
           <button onClick={proceedToCheckout} className={styles.button}>
             Checkout
           </button>
@@ -68,6 +81,13 @@ function Checkout() {
         <div>
           <h1>Please Enter The Contact Information</h1>
           <div className={styles.checkoutForm}>
+            <h1>Total Price</h1>
+            <h1>
+              {new Intl.NumberFormat('en-us', {
+                style: 'currency',
+                currency: 'USD',
+              }).format(total / 100)}
+            </h1>
             <h1>Full Name</h1>
             <input
               required
