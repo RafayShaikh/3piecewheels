@@ -100,6 +100,7 @@ function Accessory({ id, item }) {
                 placeholder='blur'
                 loading='eager'
                 quality={100}
+                alt='Product'
               />
             </div>
           )}

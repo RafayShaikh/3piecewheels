@@ -11,7 +11,11 @@ function TopSection() {
   return (
     <div className={styles.topSection}>
       <div className={styles.subHead}>
-        <img src={image[0]?.picture} className={styles.image} />
+        <img
+          src={image[0]?.picture}
+          className={styles.image}
+          alt='3 Piece Wheels'
+        />
         <div className={styles.text}>
           <h1>RIDING LOW IS A RITUAL .</h1>
           <p>

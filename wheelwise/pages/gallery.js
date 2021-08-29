@@ -207,7 +207,11 @@ function gallery() {
         <Header />
         <div classNames={styles.galleryContainer}>
           <div className={styles.galleryHead}>
-            <img src={image[0]?.picture} alt='' className={styles.image} />
+            <img
+              src={image[0]?.picture}
+              alt='3 Piece Wheels'
+              className={styles.image}
+            />
             <div className={styles.headText}>
               <h1>Gallery</h1>
               <p>
