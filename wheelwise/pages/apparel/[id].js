@@ -69,6 +69,7 @@ function apparel() {
                 placeholder='blur'
                 loading='eager'
                 quality={100}
+                alt='3 Piece Wheels'
               />
             </div>
           )}

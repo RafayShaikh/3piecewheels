@@ -19,6 +19,7 @@ function Footer() {
         height={100}
         objectFit='contain'
         onClick={handleRoute}
+        alt='3 Piece Wheels'
       />
       <p>Copyright, Wise Wheels LLC, {new Date().getFullYear()}</p>
       {dataSlice.email && <p>Admin Priviledges Activated</p>}

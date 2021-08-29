@@ -29,6 +29,7 @@ function GalleryItem({ item }) {
             placeholder='blur'
             loading='eager'
             quality={100}
+            alt='Gallery Item'
           />
         )}
         <div className={styles.arrows}>

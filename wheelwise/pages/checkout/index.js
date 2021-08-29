@@ -66,7 +66,7 @@ function index() {
                   <div className={styles.cartItem}>
                     <h1>Item</h1>
                     <p>{item.name}</p>
-                    <img src={item.pictures[0]} alt='' />
+                    <img src={item.pictures[0]} alt='3 Piece Wheels' />
                     <h1>Price</h1>
                     <h1>
                       {new Intl.NumberFormat('en-us', {
@@ -89,6 +89,7 @@ function index() {
               objectFit='contain'
               height={1000}
               width={1000}
+              alt='3 Piece Wheels'
             />
           )}
         </div>

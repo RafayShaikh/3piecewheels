@@ -52,7 +52,11 @@ function Header() {
             </div>
             <Link href='/'>
               <a>
-                <img className={styles.header_logo} src='/logoCropped.png' />
+                <img
+                  className={styles.header_logo}
+                  src='/logoCropped.png'
+                  alt='3 Piece Wheels'
+                />
               </a>
             </Link>
             <div className={styles.header_navigation}>
@@ -72,7 +76,11 @@ function Header() {
             </div>
             <Link href='/'>
               <a>
-                <img className={styles.header_logo2} src='/logoCropped.png' />
+                <img
+                  className={styles.header_logo2}
+                  src='/logoCropped.png'
+                  alt='3 Piece Wheels'
+                />
               </a>
             </Link>
             <div className={styles.header_navigation2}>

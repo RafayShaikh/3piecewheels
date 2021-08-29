@@ -25,7 +25,11 @@ function WheelsSelection({ bolts, diameter, setSelectedSize }) {
 
   return (
     <div className={styles.wheelsContainer}>
-      <img src={image[0]?.picture} className={styles.image} />
+      <img
+        src={image[0]?.picture}
+        className={styles.image}
+        alt='3 Piece Wheels'
+      />
       <div className={styles.formContainer}>
         <h1>Find Wheels That Fit Your Style</h1>
         <h4>Select A Wheel Diameter</h4>
