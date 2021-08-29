@@ -16,13 +16,9 @@ function Accessory({ id, item }) {
       return;
     }
     if (!deleteState) {
-      console.log(deleteState);
-      console.log('returned at delete state');
       return;
     }
     if (!deleteState.pictures) {
-      console.log(deleteState.pictures);
-      console.log('returned at pictures state');
       return;
     }
     deleteState.pictures.forEach((picture) => {
@@ -33,9 +29,7 @@ function Accessory({ id, item }) {
       storageRef
         .delete()
         .then()
-        .catch((error) => {
-          console.log(error);
-        });
+        .catch((error) => {});
     });
   };
   const deleteEntry = async (docId) => {
@@ -67,7 +61,6 @@ function Accessory({ id, item }) {
         pictures: JSON.stringify(item.pictures),
       },
     });
-    console.log(JSON.stringify(item.price));
   };
 
   const [truncateDescription, setTruncateDescription] = useState(null);
