@@ -19,13 +19,9 @@ function Wheel({ id, item, fetched }) {
       return;
     }
     if (!deleteState) {
-      console.log(deleteState);
-      console.log('returned at delete state');
       return;
     }
     if (!deleteState.pictures) {
-      console.log(deleteState.pictures);
-      console.log('returned at pictures state');
       return;
     }
     deleteState.pictures.forEach((picture) => {
@@ -36,9 +32,7 @@ function Wheel({ id, item, fetched }) {
       storageRef
         .delete()
         .then()
-        .catch((error) => {
-          console.log(error);
-        });
+        .catch((error) => {});
     });
   };
 

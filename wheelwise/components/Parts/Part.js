@@ -16,13 +16,9 @@ function Part({ id, item }) {
       return;
     }
     if (!deleteState) {
-      console.log(deleteState);
-      console.log('returned at delete state');
       return;
     }
     if (!deleteState.pictures) {
-      console.log(deleteState.pictures);
-      console.log('returned at pictures state');
       return;
     }
     deleteState.pictures.forEach((picture) => {
@@ -33,9 +29,7 @@ function Part({ id, item }) {
       storageRef
         .delete()
         .then()
-        .catch((error) => {
-          console.log(error);
-        });
+        .catch((error) => {});
     });
   };
   const deleteEntry = async (docId) => {
